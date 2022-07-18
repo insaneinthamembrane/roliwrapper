@@ -5,7 +5,7 @@ with open('README.md', encoding='utf-8') as f:
 
 setup(
     name='roliwrapper',
-    version='0.0.1',
+    version='0.2.0',
     author='htach',
     description='Rolimons API Wrapper',
     long_description=readme,
