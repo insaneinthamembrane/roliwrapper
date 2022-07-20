@@ -26,7 +26,6 @@ class AdCache:
     def update(cls) -> None:
         """Updates current trade ad cache"""
 
-        cache = cls.cache
         req = requests.get('https://www.rolimons.com/tradeadsapi/getrecentads')
         if req.status_code != 200:
             return
@@ -34,14 +33,7 @@ class AdCache:
         res = req.json()
         trade_ads = res.get('trade_ads', [])
 
-        formatted_ads = [Ad(*i) for i in trade_ads]
-
-        for ad in formatted_ads:
-            cache.append(ad)
-
-        old_trades = [i for i in cache if i not in formatted_ads]
-        while old_trades:
-            cache.remove(old_trades[0])
+        cls.cache = [Ad(*i) for i in trade_ads]
 
     @classmethod
     def containing(cls, item_id: int) -> list[Ad]:

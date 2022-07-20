@@ -43,7 +43,7 @@ class ItemCache:
 
         res = req.json()
         items = res.get('items', [])
-        cache, trend, demand = cls.cache, cls.trends, cls.demands
+        trend, demand = cls.trends, cls.demands
 
         for item in items:
             data = items[item]
@@ -55,14 +55,7 @@ class ItemCache:
             data[9] = data[9] > 0
             data.insert(0, int(item))
 
-        formatted_items = [Item(*items[i]) for i in items]
-
-        for item in formatted_items:
-            cache.append(item)
-
-        old_items = [i for i in cache if i not in formatted_items]
-        while old_items:
-            cache.remove(old_items[0])
+        cls.cache = [Item(*items[i]) for i in items]
 
     @classmethod
     def get(cls, *keywords) -> list[Item]:
