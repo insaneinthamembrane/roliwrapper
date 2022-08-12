@@ -1,5 +1,7 @@
 from .ad import Ad
 
+from typing import Union
+
 import requests
 
 
@@ -17,7 +19,7 @@ class AdCache:
             yield i
 
     @classmethod
-    def __getitem__(cls, identifier: int | str) -> Ad:
+    def __getitem__(cls, identifier: Union[int, str]) -> Ad:
         for i in cls.cache:
             if i.Id == identifier or i.Roblox_Id == identifier:
                 return i

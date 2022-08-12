@@ -1,6 +1,6 @@
 from .item import Item
 
-from typing import Generator
+from typing import Union, Generator
 
 import requests
 
@@ -28,7 +28,7 @@ class ItemCache:
             yield i
 
     @classmethod
-    def __getitem__(cls, identifier: int | str) -> Item:
+    def __getitem__(cls, identifier: Union[int, str]) -> Item:
         for i in cls.cache:
             if i.Id == identifier or i.Name == identifier or i.Acronym == identifier:
                 return i
