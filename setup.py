@@ -13,5 +13,5 @@ setup(
     packages=find_packages(),
     url='https://github.com/htach/roliwrapper',
     install_requires=['requests'],
-    python_requires='>=3.7'
+    python_requires='>=3.9'
 )
