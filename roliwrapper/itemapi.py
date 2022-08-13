@@ -30,7 +30,8 @@ class ItemCache:
     @classmethod
     def __getitem__(cls, identifier: Union[int, str]) -> Item:
         for i in cls.cache:
-            if i.Id == identifier or i.Name == identifier or i.Acronym == identifier:
+            if (i.Id == identifier or i.Name == identifier or identifier in i.Name or i.Acronym == identifier or
+            identifier in i.Name.lower() or identifier in i.Acronym.lower()):
                 return i
 
     @classmethod
