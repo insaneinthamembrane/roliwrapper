@@ -13,7 +13,7 @@ ads.containing(143984891)
 
 items = roliwrapper.ItemCache()
 
-# get item by acronym, keyword, or name
+# get item by acronym, keyword, name, or id
 items['sttc']
 
 # update item cache

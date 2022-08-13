@@ -29,9 +29,11 @@ class ItemCache:
 
     @classmethod
     def __getitem__(cls, identifier: Union[int, str]) -> Item:
+        if isinstance(identifier, str):
+            identifier = identifier.lower()
+    
         for i in cls.cache:
-            if (i.Id == identifier or i.Name == identifier or identifier in i.Name or i.Acronym == identifier or
-            identifier in i.Name.lower() or identifier in i.Acronym.lower()):
+            if (isinstance(identifier, str) and (identifier in i.Name.lower() or identifier in i.Acronym.lower())) or i.Id == identifier:
                 return i
 
     @classmethod
