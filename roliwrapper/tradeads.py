@@ -8,14 +8,14 @@ from .ad import Ad
 class AdCache:
     cache: list[Ad] = []
 
-    def __init__(cls) -> None:
-        cls.update()
+    def __init__(self) -> None:
+        self.update()
 
-    def __str__(cls) -> str:
-        return f"{len(cls.cache)} cached trade ads"
+    def __str__(self) -> str:
+        return f"{len(self.cache)} cached trade ads"
 
-    def __iter__(cls) -> Ad:
-        yield from cls.cache
+    def __iter__(self) -> Ad:
+        yield from self.cache
 
     @classmethod
     def __getitem__(cls, identifier: Union[int, str]) -> Ad:

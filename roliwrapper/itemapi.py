@@ -17,14 +17,14 @@ class ItemCache:
     demands = ["None", "Terrible", "Low", "Normal", "High", "Amazing"]
     trends = ["None", "Lowering", "Unstable", "Stable", "Raising", "Fluctuating"]
 
-    def __init__(cls) -> None:
-        cls.update()
+    def __init__(self) -> None:
+        self.update()
 
-    def __str__(cls) -> str:
-        return f"{len(cls.cache)} cached items"
+    def __str__(self) -> str:
+        return f"{len(self.cache)} cached items"
 
-    def __iter__(cls) -> Generator[Item, None, None]:
-        yield from cls.cache
+    def __iter__(self) -> Generator[Item, None, None]:
+        yield from self.cache
 
     @classmethod
     def __getitem__(cls, identifier: Union[int, str]) -> Item:
