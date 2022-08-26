@@ -14,7 +14,7 @@ ads.containing(143984891)
 items = roliwrapper.ItemCache()
 
 # get item by acronym, keyword, name, or id
-items['sttc']
+items["sttc"]
 
 # update item cache
 items.update()
@@ -36,15 +36,15 @@ items.hyped()
 
 # get all items with specified demand value
 # 'None', 'Terrible', 'Low', 'Normal', 'High', 'Amazing'
-items.demand('amazing')
+items.demand("amazing")
 
 # get all items with specified trend value
 # 'None', 'Lowering', 'Unstable', 'Stable', 'Raising', 'Fluctuating'
-items.trend('stable')
+items.trend("stable")
 
 # returns the cache sorted by the specified value
 # Id', 'Name', 'Rap', 'Value', 'Trend', or 'Demand'
-items.sort_by('rap')
+items.sort_by("rap")
 
 # get all items found with keywords or acronyms provided
-items.get('gucci', 'ralph')
+items.get("gucci", "ralph")
