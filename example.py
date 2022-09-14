@@ -48,3 +48,10 @@ items.sort_by("rap")
 
 # get all items found with keywords or acronyms provided
 items.get("gucci", "ralph")
+
+# create session to post trade ads
+session = roliwrapper.session('verification')
+session.post_ad('id', 'offering', 'requesting', 'tags')
+
+# fetch player info by id
+roliwrapper.fetch_player(298389293)
