@@ -12,6 +12,7 @@ class Player:
     Privacy_Enabled: bool
     Terminated: bool
     Stats_Uodated: datetime.datetime
+    Last_Scan: datetime.datetime
     Last_Online: datetime.datetime
     Last_Location: str
     Rolibadges: dict[str, int]
